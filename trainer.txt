@@ -1,0 +1,19 @@
+1#Jon Doe#123 Main St#johndoe@email.com#True
+2#Jane Smith#456 Oak Ave#janesmith@gmail.com#False
+3#Robert Johnson#789 Elm St#rjohnson@hotmail.com#False
+4#Emily Brown#234 Maple Ave#emilybrown@gmail.com#False
+5#Michael Lee#567 Pine St#michaellee@yahoo.com#False
+6#Samantha Davis#890 Birch Blvd#sdavis23@hotmail.com#False
+7#David Jones#432 Cedar Ln#djones78@gmail.com#False
+8#Melissa Clark#765 Willow Dr#mclark21@gmail.com#False
+9#Christopher White#987 Birchwood Dr#cwhite94@yahoo.com#True
+10#Amanda Martin#654 Cedar St#amartin17@hotmail.com#False
+11#Daniel Martin#143 Poplar St#dmartin@gmail.com#False
+12####False
+13####False
+14#Caleb Dumeb#627 Ghost St#cdume@yahoo.com#True
+15#Peter Parker#626 Marvel ST#spiderman@gmail.com#False
+16#Samuel#142 Smith Street#smith@gmail.com#True
+17#Jesse Pinkman#182 Street Lane#pinkman@yahoo.com'#False
+18#Theo James#123 happy lane#TheoJames@gmail.com#False
+19#Test Name#980 Test St#testemail@gmail.com#False

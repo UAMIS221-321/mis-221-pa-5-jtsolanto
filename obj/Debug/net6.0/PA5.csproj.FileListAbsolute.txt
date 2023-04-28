@@ -1,0 +1,15 @@
+C:\Users\jakes\prog\repos\PA5\bin\Debug\net6.0\PA5.exe
+C:\Users\jakes\prog\repos\PA5\bin\Debug\net6.0\PA5.deps.json
+C:\Users\jakes\prog\repos\PA5\bin\Debug\net6.0\PA5.runtimeconfig.json
+C:\Users\jakes\prog\repos\PA5\bin\Debug\net6.0\PA5.dll
+C:\Users\jakes\prog\repos\PA5\bin\Debug\net6.0\PA5.pdb
+C:\Users\jakes\prog\repos\PA5\obj\Debug\net6.0\PA5.csproj.AssemblyReference.cache
+C:\Users\jakes\prog\repos\PA5\obj\Debug\net6.0\PA5.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\jakes\prog\repos\PA5\obj\Debug\net6.0\PA5.AssemblyInfoInputs.cache
+C:\Users\jakes\prog\repos\PA5\obj\Debug\net6.0\PA5.AssemblyInfo.cs
+C:\Users\jakes\prog\repos\PA5\obj\Debug\net6.0\PA5.csproj.CoreCompileInputs.cache
+C:\Users\jakes\prog\repos\PA5\obj\Debug\net6.0\PA5.dll
+C:\Users\jakes\prog\repos\PA5\obj\Debug\net6.0\refint\PA5.dll
+C:\Users\jakes\prog\repos\PA5\obj\Debug\net6.0\PA5.pdb
+C:\Users\jakes\prog\repos\PA5\obj\Debug\net6.0\PA5.genruntimeconfig.cache
+C:\Users\jakes\prog\repos\PA5\obj\Debug\net6.0\ref\PA5.dll
