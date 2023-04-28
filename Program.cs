@@ -1,14 +1,19 @@
 ﻿using PA5;
+//  namespace contains all of the classes and methods
+
 internal class Program
 {
     private static void Main(string[] args)
     {
-        // start //
+        // This is the main loop of the program. It will continue to run until the user chooses to exit.
+        // Create an array of trainers, listings, and bookings.
         Trainer[] trainers = new Trainer[400];
         Listing[] listings = new Listing[400];
         Booking[] bookings = new Booking[400];
 
-        while (true)
+
+        while (true)  //  while loop will continue to run as long as the user does not choose to exit the program.
+
         {
             Console.BackgroundColor = ConsoleColor.Black;
             Console.Clear();
@@ -21,7 +26,7 @@ internal class Program
                 Console.BackgroundColor = ConsoleColor.Black;
                 for (int i = 0; i < options.Length; i++)
                 {
-                    if (selectedOption == i)
+                    if (selectedOption == i) // If the current option is selected, highlight it.
                     {
                         Console.BackgroundColor = ConsoleColor.White;
                         Console.ForegroundColor = ConsoleColor.Black;
@@ -34,44 +39,50 @@ internal class Program
                     System.Console.WriteLine(options[i]);
                 }
 
-                ConsoleKeyInfo keyInfo = Console.ReadKey();
+                ConsoleKeyInfo keyInfo = Console.ReadKey();   // Get the user's input.
 
-                switch (keyInfo.Key)
+
+                switch (keyInfo.Key)    // Switch on the user's input.
+
                 {
                     case ConsoleKey.UpArrow:
+                    // If the user pressed the up arrow key, decrease the selected option.
                         selectedOption--;
                         if (selectedOption < 0)
                         {
+                            // If the selected option is less than 0, set it to the maximum value.
                             selectedOption = options.Length - 1;
                         }
                         break;
                     case ConsoleKey.DownArrow:
+                     // If the user pressed the down arrow key, increase the selected option.
                         selectedOption++;
                         if (selectedOption >= options.Length)
                         {
+                            // If the selected option is greater than or equal to the length of the options array, set it to the minimum value.
                             selectedOption = 0;
                         }
                         break;
-                    case ConsoleKey.Enter:
+                    case ConsoleKey.Enter: // If the user pressed the enter key, execute the selected option.
                         Console.Clear();
                         switch (selectedOption)
                         {
                             case 0:
-                                ManageTrainer(trainers);
+                                ManageTrainer(trainers);  // If the selected option is 0, call the ManageTrainer method.
                                 break;
                             case 1:
-                                ManageListing(listings);
+                                ManageListing(listings); // If the selected option is 1, call the ManageListing method.
                                 break;
                             case 2:
-                                ManageCustomer(trainers, listings, bookings);
+                                ManageCustomer(trainers, listings, bookings); // If the selected option is 2, call the ManageCustomer method.
                                 break;
                             case 3:
-                                RunReports(trainers, listings, bookings);
+                                RunReports(trainers, listings, bookings); // If the selected option is 3, call the RunReports method.
                                 break;
                             case 4:
                                 Console.Clear();
                                 Console.BackgroundColor = ConsoleColor.Black;
-                                Environment.Exit(0);
+                                Environment.Exit(0); // If the selected option is 4, exit the program.
                                 break;
                         }
                         break;
@@ -79,14 +90,17 @@ internal class Program
             }
         }
     }
-    static void ManageTrainer(Trainer[] trainers)
+    static void ManageTrainer(Trainer[] trainers)  // This method manages the trainer data.
+
     {
         Console.Clear();
 
-        TrainerUtility utility = new TrainerUtility(trainers);
-        utility.GetAllTrainersFromFile();
+        TrainerUtility utility = new TrainerUtility(trainers);   // Create a TrainerUtility object.
 
-        TrainerReport report = new TrainerReport(trainers);
+        utility.GetAllTrainersFromFile();  // Get all of the trainers from the file.
+
+
+        TrainerReport report = new TrainerReport(trainers); // Print all of the trainers to the console.
         report.PrintAllTrainers();
         while (true)
         {
@@ -136,16 +150,16 @@ internal class Program
                         switch (selectedOption)
                         {
                             case 0:
-                                utility.AddTrainer();
+                                utility.AddTrainer(); // If the user selected option 0, call the AddTrainer method.
                                 break;
                             case 1:
-                                utility.UpdateTrainer();
+                                utility.UpdateTrainer(); // If the user selected option 1, call the UpdateTrainer method.
                                 break;
                             case 2:
-                                utility.DeleteTrainer();
+                                utility.DeleteTrainer(); // If the user selected option 2, call the DeleteTrainer method.
                                 break;
                             case 3:
-                                return;
+                                return; // If the user selected option 3, return to the main menu.
                         }
                        break;
                 }
@@ -208,16 +222,16 @@ internal class Program
                         switch (selectedOption)
                         {
                             case 0:
-                                utility.AddListing();
+                                utility.AddListing(); // If the user selected option 0, call the AddListing method.
                                 break;
                             case 1:
-                                utility.UpdateListing();
+                                utility.UpdateListing(); // If the user selected option 1, call the UpdateListing method.
                                 break;
                             case 2:
-                                utility.DeleteListing();
+                                utility.DeleteListing(); // If the user selected option 2, call the DeleteListing method.
                                 break;
                             case 3:
-                                return;
+                                return; // If the user selected option 3, return to the main menu.
                         }
                         break;
                 }
@@ -332,7 +346,7 @@ internal class Program
                                     }
                                     else
                                     {
-                                        SayInvalid();
+                                        ReturnInvalid();
                                     }
                                     report = new BookingReport(bookings);
                                     report.PrintAllBookings();
@@ -350,7 +364,7 @@ internal class Program
                     }
                     else
                     {
-                        SayInvalid();
+                        ReturnInvalid();
                     }
                     break;
                 case ConsoleKey.Escape:
@@ -517,7 +531,7 @@ internal class Program
                                         } 
                                         else 
                                         {
-                                            SayInvalid();
+                                            ReturnInvalid();
                                         }
                                         Console.Clear();
                                         break;
@@ -531,22 +545,22 @@ internal class Program
                     }
                     else
                     {
-                        SayInvalid();
+                        ReturnInvalid();
                     }
                     break;
             }
         } 
     }
 
-    static void SayInvalid()
-    { // states invalid if choice enetered is able to run
-        System.Console.WriteLine("Invalid");
-        PauseAction();
+    static void ReturnInvalid()
+    { 
+        System.Console.WriteLine("Invalid input, please try another option");
+        PressContinue();
     }
 
-    static void PauseAction()
-    { // pauses the console for the user to be able to see what the computer outputs
-        System.Console.WriteLine("Press any key to continue...");
+    static void PressContinue()
+    { 
+        System.Console.WriteLine("...! Press any key to continue !...");
         Console.ReadKey();
     }     
 }
